@@ -1,0 +1,22 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    username: String!
+    todos: [Todo!]!
+  }
+
+  type Todo {
+    id: ID!
+    userId: ID!
+    title: String!
+    completed: Boolean!
+    user: User!
+  }
+
+  type Query {
+    user(id: ID!): User
+    users: [User!]!
+    todo(id: ID!): Todo
+    todos: [Todo!]!
+  }

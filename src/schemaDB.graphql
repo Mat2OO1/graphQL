@@ -1,0 +1,39 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    username: String!
+    todos: [Todo!]!
+  }
+
+  type Todo {
+    id: ID!
+    userid: ID
+    title: String!
+    completed: Boolean!
+    user: User!
+  }
+
+  input UpdateTodoInput {
+    id: ID!
+    userid: ID
+    title: String
+    completed: Boolean
+  }
+
+  type Mutation {
+  addUser(name: String!, email: String!, username: String!): User!
+  deleteUser(id: ID!): User!
+  editUser(id: ID!, name: String, email: String, username: String): User!
+  addTodo(userid: ID!, title: String!, completed: Boolean!): Todo!
+  deleteTodo(id: ID!): Todo!
+  editTodo(id: ID!, userid: ID, title: String, completed: Boolean): Todo!
+}
+
+
+  type Query {
+    user(id: ID!): User
+    users: [User!]!
+    todo(id: ID!): Todo
+    todos: [Todo!]!
+  }

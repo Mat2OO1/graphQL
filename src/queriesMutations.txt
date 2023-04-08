@@ -1,0 +1,98 @@
+## get users
+# query{
+#   users{
+#     name,
+#     email
+#   }
+# }
+### get user by id
+# query{
+#   user(id:11){
+#     name,
+#     email
+#   }
+# }
+### add User
+# mutation {
+#   addUser(name: "John Doe", email: "john.doe@example.com", username: "johndoe") {
+#     id
+#     name
+#     email
+#     username
+#   }
+# }
+### edit User
+# mutation{
+#   editUser(
+#     id:11
+#     email:"john.kowalski@example.com"
+#     username:"jkowalski"
+#     name: "Jan Kowalski"
+#   ){
+#     id,
+#     email,
+#     username
+#   }
+# }
+
+### delete user
+# mutation{
+#   deleteUser(id:11){
+#     id,
+#     name
+#     email,
+#     username
+#   }
+# }
+
+## get todos
+# query{
+#   todos{
+#     id,
+#     userid
+#   }
+# }
+### get todo by id
+
+# query{
+#   todo(id:1001){
+#     id,
+#     userid,
+#     title
+#   }
+# }
+###add todo
+# mutation {
+#   addTodo(
+#     userid: 11
+#     title: "Buy groceries"
+#     completed: false
+#   ) {
+#     id
+#   }
+# }
+
+## edit todo
+# mutation {
+#   editTodo(
+#     id:1001
+#     userid: 10
+#     title: "Something changed"
+#     completed: true
+#   ) {
+#     id,
+#     userid,
+#     title,
+#     completed
+#   }
+# }
+
+## delete todo
+# mutation{
+#   deleteTodo(id:1001){
+#     id
+#     userid
+#     title
+#     completed
+#   }
+# }
